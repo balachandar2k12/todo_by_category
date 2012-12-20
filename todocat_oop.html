@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>todo category list</title> 
+	<style type="text/css">
+div.category
+ {
+    padding: 100;
+    width: auto;
+    height: auto;
+    border: 1px solid;
+    border-radius: 2px;
+    border-color: navy;
+    margin: 1px;
+    padding: 2px;
+    float: left;
+    text-align: center;
+ }
+
+ div.items
+ {
+    padding: 100;
+    width: auto;
+    height: auto;
+    border: 1px solid;
+    border-radius: 2px;
+    border-color: white;
+    margin: 1px;
+    padding: 2px;
+
+    text-align: center;
+ }
+#footer { 
+        position: relative;
+        width: 960px; 
+        color: navy; 
+        background-color: none; 
+        padding: 5px;
+        margin-top: -150px; /* negative value of footer height */
+        height: 50px;
+        clear:both;
+        vertical-align: center;
+        text-align:center;
+
+        }
+
+</style>
+
+</head>
+<body>
+
+<div class="outer-div" align="center">
+  <u>Todo List</u>
+    <div class="inner-div" style="width: 960px; color: navy; background-color: pink; padding: 5px;" align="center">
+
+      <input type="text" id="item" style="height:20px; width:400px;" placeholder="What do you want to do? Ex:name@category"> </input>
+       
+    </div>
+    <div id="tasks" style="vertical-align: center;text-align:center;"></div>
+   
+
+</div>
+<div id="footer" align="center"> <p>Category Count: <span id="cat_count">0</span>&nbsp;&nbsp;Total Items : <span id="itemcount">0</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span id="itemchecked">0&nbsp;
+    </span> <a id="clearButton" href="#">Total Finished Items  </a>   </p>
+</div>
+
+<!--caregory template  -->
+
+<script type="script/template" id='todolist'>
+<div class="category" id="<%=cat%>"> 
+category :<b> <%=cat%> </b><input type="button" value="Delete" class="delete_category" id="<%=cat%>_category">
+<div class="items" id="<%=cat%>_items"> 
+</div>
+<div>Item Count:<span id="<%=cat%>count">0</span>&nbsp;&nbsp;&nbsp;<a href="#" id="<%=cat%>_delete" class="remove_items">finished Items :</a>
+<span id="<%=cat%>finished">0</span></div></div>
+</script>
+
+
+<script src="jquery-1.8.3.min.js"></script>
+<script src="underscore.js"></script>
+<script src="jquery-ui.js"></script>
+<script src="todo_oop.js"></script>
+
+</body>
+</html>
+
